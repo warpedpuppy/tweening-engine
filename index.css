@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    padding: 20px;
+}
+main {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+}
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
