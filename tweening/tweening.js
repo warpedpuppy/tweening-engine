@@ -5,11 +5,7 @@ export default {
   fadeOutBoolean: false,
   fadeInBoolean: false,
   tweenArray: [],
-  // tweens: [],
   defaultEasing: 'linear',
-  test () {
-    console.log('test')
-  },
   killAll () {
     const clone = (this.tweenArray) ? this.tweenArray.slice() : []
     this.tweenArray.length = 0
@@ -22,22 +18,6 @@ export default {
         break
       }
     })
-  },
-  planetJump (orbsCont, hero, newPlanet, onCompleteFunction) {
-    this.tween(orbsCont.pivot, 1.5,
-      {
-        x: [orbsCont.pivot.x, newPlanet.x],
-        y: [orbsCont.pivot.y, newPlanet.y]
-      },
-      onCompleteFunction,
-      'easeOutBounce')
-    this.tween(hero, 0.5, { y: [hero.y, -newPlanet.radius] })
-  },
-  spaceShipBlastOff (ship, maze, background, onCompleteHandler) {
-    this.blastOff.spaceShipBlastOff(ship, maze, background, onCompleteHandler)
-  },
-  spaceShipReturnHome (background, maze, ship, onCompleteHandler) {
-    this.returnHome.spaceShipReturnHome(background, maze, ship, onCompleteHandler)
   },
   tween (item, seconds, changePropertiesObject, onComplete, easing) {
     if (!item || item.isTweening) return
@@ -80,9 +60,7 @@ export default {
           const b = item.obj[property][0]
           const c = item.obj[property][1]
           const d = item.seconds * 1000
-          // let e = c - b;
           const percentage = t / d
-          // console.log(t, d)
           const easing = (!item.easing) ? this.defaultEasing : item.easing
           const inc = Easing[easing](percentage)
           const inc2 = b + inc * (c - b)
@@ -99,4 +77,3 @@ export default {
   }
 
 }
-// export default tweening; 

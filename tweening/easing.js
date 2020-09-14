@@ -25,7 +25,6 @@ export default {
     easeOutQuint (t) { return 1 + (--t) * t * t * t * t },
     // acceleration until halfway, then deceleration
     easeInOutQuint (t) { return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t },
-  
     easeOutElastic (t) {
       const p = 0.3
       return Math.pow(2, -10 * t) * Math.sin((t - p / 4) * (2 * Math.PI) / p) + 1
