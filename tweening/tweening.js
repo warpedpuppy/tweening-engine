@@ -7,8 +7,8 @@ export default {
   tweenArray: [],
   defaultEasing: 'linear',
   killAll () {
-    const clone = (this.tweenArray) ? this.tweenArray.slice() : []
-    this.tweenArray.length = 0
+    const clone = (this.tweenArray) ? this.tweenArray.slice() : [] ;
+    this.tweenArray.length = 0;
 
     clone.forEach((item, index) => {
       for (const property in item.obj) {
@@ -20,25 +20,18 @@ export default {
     })
   },
   tween (item, seconds, changePropertiesObject, onComplete, easing) {
-    if (!item || item.isTweening) return
+    if (!item || item.isTweening) return;
 
-    item.id = utils.randomIntBetween(10, 20)
+    item.id = utils.randomIntBetween(10, 20);
 
-    item.seconds = seconds
-    item.onComplete = onComplete
-    item.easing = easing
-    item.startTime = new Date().getTime()
-    item.obj = changePropertiesObject
+    item.seconds = seconds;
+    item.onComplete = onComplete;
+    item.easing = easing;
+    item.startTime = new Date().getTime();
+    item.obj = changePropertiesObject;
+    item.isTweening = true;
 
-    item.isTweening = true
     this.tweenArray.push(item)
-  },
-  easeInQuad (t, b, c, d) {
-    // t: current time, b: begInnIng value, c: change In value, d: duration
-    return c * (t /= d) * t + b
-  },
-  easeInSine (t, b, c, d) {
-    return -c * Math.cos(t / d * (Math.PI / 2)) + c + b
   },
   animate () {
     // console.log(this.tweenArray.length)

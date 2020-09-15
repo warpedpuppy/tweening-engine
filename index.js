@@ -80,13 +80,16 @@ import utils from './tweening/utils.js';
         }
 
         function actionComplete () {
-            basicText.text = "action complete!";
+           
             if (state === 'single') {
                 document.getElementById('start-animation').disabled = false;
+                basicText.text = "action complete!";
             } else {
                 counter ++;
+                basicText.text = counter.toString();
                 if (counter === 100) {
                     document.getElementById('start-animation').disabled = false;
+                   
                 }
             }
         }
