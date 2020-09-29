@@ -74,7 +74,7 @@ import utils from './tweening/utils.js';
                  tweening.tween(character, character.props.duration, {
                 x: [character.props.startX, character.props.endX], 
                 y: [character.props.startY, character.props.endY]
-            }, actionComplete,'easeOutBounce');
+            }, actionComplete,'bouncePast');
             }
            
         }

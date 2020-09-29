@@ -4,4 +4,6 @@ I created this script because I was writing a game in both javascript and swift 
 
 I've avoided using react here to make it as approachable as possible.
 
-I did not create the easing math here -- it was given to me by a friend and I do not know its origin.
+Easing from:
+
+https://github.com/danro/easing-js/blob/master/easing.js
